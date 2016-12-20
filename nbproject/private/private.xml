@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/projet/src/AppBundle/Controller/ProduitController.php</file>
+            <file>file:/var/www/html/projet/app/Resources/views/produits/list_produits.twig</file>
+            <file>file:/var/www/html/projet/src/AppBundle/Controller/UserController.php</file>
+            <file>file:/var/www/html/projet/src/AppBundle/Form/Type/ProduitType.php</file>
+            <file>file:/var/www/html/projet/app/config/routing.yml</file>
+            <file>file:/var/www/html/projet/src/AppBundle/Resources/config/doctrine/User.orm.yml</file>
+            <file>file:/var/www/html/projet/src/AppBundle/Entity/Produit.php</file>
+            <file>file:/var/www/html/projet/app/Resources/views/form/magasinier/list_produits.html.twig</file>
+            <file>file:/var/www/html/projet/src/AppBundle/Resources/config/doctrine/Produit.orm.yml</file>
+            <file>file:/var/www/html/projet/src/AppBundle/Form/Type/UserType.php</file>
+            <file>file:/var/www/html/projet/app/Resources/views/form/authentification/authentification.html.twig</file>
+        </group>
+    </open-files>
+</project-private>
