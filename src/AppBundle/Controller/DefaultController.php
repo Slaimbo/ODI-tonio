@@ -8,10 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     
-    public function homeAction(Request $request, $message)
+    public function homeAction(Request $request)
     {
-        $data = array('msg' => $message,
-                      'nav' => $request->server->get('HTTP_USER_AGENT'));
-        return $this->render('default/home.html.twig', $data);
+        return $this->redirectToRoute('auth');
     }
 }

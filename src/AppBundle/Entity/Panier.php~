@@ -51,4 +51,33 @@ class Panier
     {
         return $this->etat;
     }
+    /**
+     * @var string
+     */
+    private $login;
+
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     *
+     * @return Panier
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
 }

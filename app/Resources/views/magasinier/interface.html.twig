@@ -10,9 +10,9 @@
         
 {% block body %}
     <ul>
-        <li> <a href="{{ path('listproduit') }}">Liste des produits </a> </li>
-        <li> <a href="{{ path('disconnect') }}">Ajout de produit </a> </li>
-        <li> <a href="{{ path('disconnect') }}">Gestion des stocks </a> </li>
-        <li> <a href="{{ path('disconnect') }}">Gestion des paniers </a> </li>
+        <li> <a href="{{ path('listproduit')   }}">Liste des produits </a> </li>
+        <li> <a href="{{ path('ajoutproduit')  }}">Ajout de produit </a> </li>
+        <li> <a href="{{ path('modifierstock') }}">Gestion des stocks </a> </li>
+        <li> <a href="{{ path('alerte')    }}">Gestion des alertes </a> </li>
     </ul>
 {% endblock %}

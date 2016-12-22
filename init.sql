@@ -15,11 +15,3 @@ insert into client values
 
 insert into magasinier values
 	('tata', 5, 1500);
-
-
-
-insert into produit values
-	(0, 'gomme', 'sainte gomme', 'papeterie', 50, 10, 2, '2022-01-01', './photos/gomme.img', True);
-
-insert into produit values
-	(1, 'peinture', 'sainte peinture', 'plastique', 20, 5, 7, '2050-01-01', './photos/peinture.img', False);

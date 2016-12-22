@@ -13,3 +13,11 @@ AppBundle\Entity\Panier:
             type: string
             nullable: false
             columnDefinition: ENUM('Non validé', 'En cours de traitement', 'Traité')
+        login:
+            associationKey: true
+    manyToOne:
+    login:
+        targetEntity: User
+        joinColumns:
+            user:
+                referencedColumnName: login

@@ -2,13 +2,37 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+home:
+    path: /
+    defaults: {_controller: AppBundle:Default:home}
+
+interface_magasinier:
+    path: /magasinier/interface
+    defaults: {_controller: AppBundle:Magasinier:interface}    
+
+ajoutproduit:
+    path: /produits/ajouter/{message}
+    defaults: {_controller: AppBundle:Produit:ajouterProduit, message: ''}
     
+modifierstock:
+    path: /produits/modifier/{message}
+    defaults: {_controller: AppBundle:Produit:modifierProduit, message: ''}
     
+telechargement:
+    path: /produits/telechargement
+    defaults: {_controller: AppBundle:Produit:telechargerProduit, message: ''}
     
+alerte:
+    path: /produits/alerte
+    defaults: {_controller: AppBundle:Produit:alerteProduit, message: ''}
+
 listproduit:
     path: /produits/list/{message}
     defaults: {_controller: AppBundle:Produit:listProduit, message: ''}
-    
+
+
+
 auth:
     path: /auth/form/
     defaults: {_controller: AppBundle:User:auth}
@@ -17,36 +41,34 @@ disconnect:
     path: /auth/disconnect
     defaults: {_controller: AppBundle:User:disconnect}
 
-interface_magasinier:
-    path: /magasinier/interface
-    defaults: {_controller: AppBundle:Magasinier:interface}
 
 
 
 
+interface_client:
+    path: /client/interface/{message}
+    defaults: {_controller: AppBundle:Client:interface, message: ''}
 
-
-
-
-
-
-
-addpersonne:
-    path: /personne/add
-    defaults: {_controller: AppBundle:Personne:addPersonne }
+panier_list:
+    path: /panier/list/{message}
+    defaults: {_controller: AppBundle:Client:panierList, message: ''}
     
-updatepersonne:
-    path: /personne/update/{nompersonne}/{prenompersonne}
-    defaults: {_controller: AppBundle:Personne:updatePersonne }
-
-listlieux:
-    path: /lieu/list.html/{message}
-    defaults: {_controller: AppBundle:Lieu:listLieu, message: ''}
+panier_mod:
+    path: /client/commander/{numpanier}/{message}
+    defaults: {_controller: AppBundle:Client:ModPanier, message: ''}
     
-deletelieux:
-    path: /lieu/deletelieu.html/{message}
-    defaults: {_controller: AppBundle:Lieu:deleteLieu, message: ''}
+delete_panier:
+    path: /panier/delete/{numpanier}
+    defaults: {_controller: AppBundle:Client:DeletePanier, numpanier: 0}
     
-updatelieu:
-    path: /lieu/updatelieu.html/{lieu_id}
-    defaults: {_controller: AppBundle:Lieu:updateLieu, lieu_id: ''}
+new_panier:
+    path: /panier/create
+    defaults: {_controller: AppBundle:Client:newPanier}
+    
+delete_produit_panier:
+    path: /panier/delete/{numpanier}/{numproduit}
+    defaults: {_controller: AppBundle:Client:DeleteproduitPanier}
+    
+add_produit_panier:
+    path: /panier/add/{numpanier}/{numproduit}
+    defaults: {_controller: AppBundle:Client:addProduitPanier}

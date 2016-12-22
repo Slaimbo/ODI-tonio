@@ -165,6 +165,20 @@ class Produit
 
 
     /**
+     * Set numproduit
+     *
+     * @param integer $numproduit
+     *
+     * @return Produit
+     */
+    public function setNumproduit($numproduit)
+    {
+        $this->numproduit = $numproduit;
+
+        return $this;
+    }
+
+    /**
      * Set descriptif
      *
      * @param string $descriptif

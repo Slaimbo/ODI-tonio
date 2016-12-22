@@ -375,6 +375,9 @@
     </parameter>
   </parameters>
   <services>
+    <service id="check_connection" class="AppBundle\services\CheckConnection">
+      <argument type="service" id="session"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -490,7 +493,7 @@
                   <tag name="cache.pool"/>
                   <argument>E4c165Kr8G</argument>
                   <argument></argument>
-                  <argument>PcwmErZQK8HM6fIRzZUNKg</argument>
+                  <argument>amuHIovnEZ-GhVh5oYsOiw</argument>
                   <argument>/var/www/html/projet/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -503,7 +506,7 @@
                   <tag name="cache.pool"/>
                   <argument>Wta2IOc98Y</argument>
                   <argument></argument>
-                  <argument>PcwmErZQK8HM6fIRzZUNKg</argument>
+                  <argument>amuHIovnEZ-GhVh5oYsOiw</argument>
                   <argument>/var/www/html/projet/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -835,7 +838,7 @@
       <tag name="cache.pool"/>
       <argument>vqblGxOc-0</argument>
       <argument></argument>
-      <argument>PcwmErZQK8HM6fIRzZUNKg</argument>
+      <argument>amuHIovnEZ-GhVh5oYsOiw</argument>
       <argument>/var/www/html/projet/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1589,7 +1592,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>585800666bd802.10471637</argument>
+            <argument>585bd30548e257.88046090</argument>
           </service>
         </argument>
       </argument>
@@ -1723,7 +1726,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>585800666bd802.10471637</argument>
+            <argument>585bd30548e257.88046090</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1952,6 +1955,10 @@
             </call>
           </service>
         </argument>
+      </call>
+      <call method="addGlobal">
+        <argument>CheckConnection</argument>
+        <argument type="service" id="check_connection"/>
       </call>
       <configurator method="configure">
         <service class="Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator" public="false">

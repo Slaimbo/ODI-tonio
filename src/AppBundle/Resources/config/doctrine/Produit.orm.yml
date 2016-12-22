@@ -4,9 +4,7 @@ AppBundle\Entity\Produit:
     table: produit
     id:
         numproduit:
-            generator:
-                strategy:
-                    IDENTITY
+            type: integer
     fields:
         nomproduit:
             type: string

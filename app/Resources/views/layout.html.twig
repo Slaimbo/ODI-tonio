@@ -2,7 +2,12 @@
 <html>
 
    <head>
-   <a href="{{ path('disconnect') }}">Déconnection </a>
+    {% if CheckConnection.auth == false %}
+        <a href="{{ path('auth') }}">connexion </a> 
+    {% else %}
+        <a href="{{ path('disconnect') }}">Déconnexion </a>
+    {% endif %}
+    
        <meta charset='UTF-8'>
        {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('bundles/DataTables/datatables.min.css') }}">

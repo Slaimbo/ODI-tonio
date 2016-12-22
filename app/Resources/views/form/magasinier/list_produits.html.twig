@@ -41,12 +41,12 @@
                 <td>{{ produit.numproduit }}</td>
                 <td>{{ produit.nomproduit }}</td>
                 <td>{{ produit.descriptif }}</td>
-                <td>{{ produit.categorie }}</td>
-                <td>{{ produit.qte }}</td>
-                <td>{{ produit.qtemin }}</td>
-                <td>{{ produit.prix }}</td>
+                <td>{{ produit.categorie  }}</td>
+                <td>{{ produit.qte        }}</td>
+                <td>{{ produit.qtemin     }}</td>
+                <td>{{ produit.prix       }}</td>
                 <td>{{ produit.peremption|date('Y-m-d') }}</td>
-                <td>{{ produit.photo }}</td>
+                <td><img src="{{ produit.photo }}"></td>
                 {% if produit.visible == 1 %}
                     <td>oui</td>
                 {% else %}

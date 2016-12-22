@@ -38,15 +38,24 @@ class UserController extends Controller{
             if(count($res) === 1 && $res->getPassword() === $user->getPassword() )
             {
                 $session->set('isAuth', 'yes');
+                $session->set('login', $user->getLogin());
                 
                 //Attribution du role (client ou magasinier
                 if( count($em->find(Magasinier::class, $key)) === 1)
                 {
                     $session->set('access', 'magasinier');
+                    return $this->redirectToRoute('interface_magasinier',
+                            array('message' => 'Connecté en tant que '
+                            . $user->getLogin() . 
+                            '(' . $session->get('access') .')' ));
                 }
                 else
                 {
                     $session->set('access', 'client');
+                    return $this->redirectToRoute('interface_client',
+                            array('message' => 'Connecté en tant que '
+                            . $user->getLogin() . 
+                            '(' . $session->get('access') .')' ));
                 }
                 
                 return $this->redirectToRoute('listproduit',

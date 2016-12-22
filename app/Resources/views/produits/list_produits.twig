@@ -25,7 +25,6 @@
     <table class="table table-striped" id='tab'>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Descriptif</th>
                 <th>Catégorie</th>
@@ -38,14 +37,13 @@
         <tbody>
         {% for produit in produits %}
             <tr>
-                <td>{{ produit.numproduit }}</td>
                 <td>{{ produit.nomproduit }}</td>
                 <td>{{ produit.descriptif }}</td>
-                <td>{{ produit.categorie }}</td>
-                <td>{{ produit.qte }}</td>
-                <td>{{ produit.prix }}</td>
+                <td>{{ produit.categorie  }}</td>
+                <td>{{ produit.qte        }}</td>
+                <td>{{ produit.prix    }}</td>
                 <td>{{ produit.peremption|date('Y-m-d') }}</td>
-                <td>{{ produit.photo }}</td>
+                <td><img src="{{ produit.photo }}"></td>
             </tr>
         {% endfor %}
         </tbody>
@@ -53,5 +51,8 @@
         
     {% else %}
        Aucun produit disponible.
+    {% endif %}
+    {% if CheckConnection.auth == true %}
+        <a href="{{path('interface_client')}}">retour accueil</a>
     {% endif %}
 {% endblock %}
